@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KelimelerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Kelime">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Word" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TurkceKarsiligi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrnekCumle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BilmeSayisi" Type="Int32" Nullable="false" />
+    <Property Name="BilinmeTarihi" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tarih">
+    <Key>
+      <PropertyRef Name="ayID" />
+    </Key>
+    <Property Name="ayID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ocak" Type="Int32" />
+    <Property Name="Subat" Type="Int32" />
+    <Property Name="Mart" Type="Int32" />
+    <Property Name="Nisan" Type="Int32" />
+    <Property Name="Mayis" Type="Int32" />
+    <Property Name="Haziran" Type="Int32" />
+    <Property Name="Temmuz" Type="Int32" />
+    <Property Name="Agustos" Type="Int32" />
+    <Property Name="Eylül" Type="Int32" />
+    <Property Name="Ekim" Type="Int32" />
+    <Property Name="Kasim" Type="Int32" />
+    <Property Name="Aralik" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="KelimelerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Kelime" EntityType="Self.Kelime" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Tarih" EntityType="Self.Tarih" />
+  </EntityContainer>
+</Schema>
